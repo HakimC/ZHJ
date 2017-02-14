@@ -1,0 +1,56 @@
+html{ 
+	overflow-x: hidden; 
+	overflow-y: hidden; }
+body{
+	width: 1920px;
+	height: 1080px;
+	background-image: url(../img/bg.jpg);
+	padding: 0 0 0 0;
+	
+}
+.box{
+	width: 210px;
+	height: 340px;
+	background-color: #eae9e9;
+	float: left;
+}
+.line{
+	width: 195px;
+	height: 60px;
+	padding-top: 7.5px;
+}
+.month{
+	float: left;
+	width: 58px;
+	height: 58px;
+	background-color: #424242;
+	text-align: center;
+	color: #ffffff;
+	font-family: "微软雅黑";
+	border: 1px solid #FFFFFF;
+}
+.num{
+	padding-top: 5px;
+	font-size: 20px;
+}
+.mon{
+	font-size: 14px;
+}
+.tips{
+	width: 193px;
+	height: 43px;
+	margin-top: 15px;
+	background-color: #f1f1f1;
+	border: 1px solid #FFFFFF;
+	font-family: "微软雅黑";
+	color:#6cc7f3 ;
+}
+#tips{
+	width: 210px;
+	height: 340px;
+	float: right;
+	background-color: #eae9e9;
+	font-family: "微软雅黑";
+	font-size: 22px;
+	color: red;                                               
+}

@@ -1,10 +1,1013 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/calendar.css" />
+		<script type="text/javascript" src="js/jquery-1.8.2.min.js" ></script>
 		<title></title>
 	</head>
 	<body>
-		<input type="button" value="点击"/>
+		<div style="width: 430px;height: 430px;float: right;margin-right: 426px;">
+		<center>
+			<h1 style="padding-top: 10px;">2017节日大全</h1>
+			<div style="width: 430px;height: 340px;">
+			<div class="box">
+				<div class="line">
+					<div class="month" id="month_1" onclick="change1()">
+						<div class="num">1</div>
+						<div class="mon">JAN</div>
+					</div>
+					<div class="month" id="month_2" style="margin-left: 7.5px;" onclick="change()">
+						<div class="num">2</div>
+						<div class="mon">FER</div>
+					</div>
+					<div class="month" id="month_3" style="margin-left: 7.5px;" onclick="change()">
+						<div class="num">3</div>
+						<div class="mon">MAR</div>
+					</div>
+				</div>
+				<div class="line">
+					<div class="month" id="month_4" onclick="change()">
+						<div class="num">4</div>
+						<div class="mon">APR</div>
+					</div>
+					<div class="month" id="month_5" style="margin-left: 7.5px;" onclick="change()">
+						<div class="num">5</div>
+						<div class="mon">MAY</div>
+					</div>
+					<div class="month" id="month_6" style="margin-left: 7.5px;" onclick="change()">
+						<div class="num">6</div>
+						<div class="mon">JUN</div>
+					</div>
+				</div>
+				<div class="line">
+					<div class="month" id="month_7" onclick="change()">
+						<div class="num">7</div>
+						<div class="mon">JUL</div>
+					</div>
+					<div class="month" id="month_8" style="margin-left: 7.5px;" onclick="change()">
+						<div class="num">8</div>
+						<div class="mon">AUG</div>
+					</div>
+					<div class="month" id="month_9" style="margin-left: 7.5px;" onclick="change()">
+						<div class="num">9</div>
+						<div class="mon">SEP</div>
+					</div>
+				</div>
+				<div class="line">
+					<div class="month" id="month_10" onclick="change()">
+						<div class="num">10</div>
+						<div class="mon">OCT</div>
+					</div>
+					<div class="month" id="month_11" style="margin-left: 7.5px;" onclick="change()">
+						<div class="num">11</div>
+						<div class="mon">NOV</div>
+					</div>
+					<div class="month" id="month_12" style="margin-left: 7.5px;" onclick="change()">
+						<div class="num">12</div>
+						<div class="mon">DEC</div>
+					</div>
+				</div>
+				
+				<div class="tips">					
+					<div id="time"></div>
+				</div>
+			</div>
+			<div id="tips"></div>
+			</div>
+		</center>
+		</div>
+		<audio preload="auto" autoplay="autoplay" loop="loop" hidden="hidden">
+			<source src="music/Summer (夏天)-久石让.mp3" type="audio/mp3"/>
+		</audio>
+	<script>
+		setInterval("time.innerHTML='当前时间：'+new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1);
+  		$("#month_1").click(function(){
+    		$("#month_1").css("background-color","#FFFFFF");
+    		$("#month_1").css("color","#e84a7e");
+    		$("#month_1").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>1.1-元旦<br>1.5-腊八<br>1.27-除夕<br>1.28-春节";
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		});
+  		$("#month_2").click(function(){
+    		$("#month_2").css("background-color","#FFFFFF");
+    		$("#month_2").css("color","#e84a7e");
+    		$("#month_2").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>2.2-湿地日<br>2.3-立春<br>2.11-元宵节<br>2.14-情人节<br>2.18-雨水<br>2.27-龙头节";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		});
+  		$("#month_3").click(function(){
+    		$("#month_3").css("background-color","#FFFFFF");
+    		$("#month_3").css("color","#e84a7e");
+    		$("#month_3").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>3.5-惊蛰<br>3.8-妇女节<br>3.12-植树节<br>3.15-消费者权益日<br>3.20-春分";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		});
+  		$("#month_4").click(function(){
+    		$("#month_4").css("background-color","#FFFFFF");
+    		$("#month_4").css("color","#e84a7e");
+    		$("#month_4").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>4.1-愚人节<br>4.4-清明<br>4.20-谷雨<br>4.22-地球日";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		});
+  		$("#month_5").click(function(){
+    		$("#month_5").css("background-color","#FFFFFF");
+    		$("#month_5").css("color","#e84a7e");
+    		$("#month_5").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>5.1-劳动节<br>5.4-青年节<br>5.5-立夏<br>5.12-护士节<br>5.14-母亲节<br>5.18-博物馆日<br>5.21-小满<br>5.30-端午";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		});
+  		$("#month_6").click(function(){
+    		$("#month_6").css("background-color","#FFFFFF");
+    		$("#month_6").css("color","#e84a7e");
+    		$("#month_6").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>6.1-儿童节<br>6.5-环境日<br>6.18-父亲节<br>6.21-夏至<br>6.23-奥林匹克日";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		});
+  		$("#month_7").click(function(){
+    		$("#month_7").css("background-color","#FFFFFF");
+    		$("#month_7").css("color","#e84a7e");
+    		$("#month_7").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>7.1-建党节<br>7.7-小暑<br>7.22-大暑";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		});
+  		$("#month_8").click(function(){
+    		$("#month_8").css("background-color","#FFFFFF");
+    		$("#month_8").css("color","#e84a7e");
+    		$("#month_8").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>8.1-建军节<br>8.7-立秋<br>8.23-处暑<br>8.28-七夕";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		});
+  		$("#month_9").click(function(){
+    		$("#month_9").css("background-color","#FFFFFF");
+    		$("#month_9").css("color","#e84a7e");
+    		$("#month_9").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>9.3-抗战胜利日<br>9.5-中元节<br>9.7-白露<br>9.10-教师节<br>9.23-秋分";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		});
+  		$("#month_10").click(function(){
+    		$("#month_10").css("background-color","#FFFFFF");
+    		$("#month_10").css("color","#e84a7e");
+    		$("#month_10").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>10.1-国庆节<br>10.4-中秋<br>10.8-寒露<br>10.23-霜降<br>10.28-重阳";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		});
+  		$("#month_11").click(function(){
+    		$("#month_11").css("background-color","#FFFFFF");
+    		$("#month_11").css("color","#e84a7e");
+    		$("#month_11").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>11.7-立冬<br>11.11-光棍节<br>11.18-寒食节<br>11.22-小雪";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		});
+  		$("#month_12").click(function(){
+    		$("#month_12").css("background-color","#FFFFFF");
+    		$("#month_12").css("color","#e84a7e");
+    		$("#month_12").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>12.1-艾滋病日<br>12.2-下元节<br>12.7-大雪<br>12.22-冬至<br>12.25-圣诞节";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+  		});
+  		var m=new Date().getMonth();
+  		if (m=0) {
+  			$("#month_1").css("background-color","#FFFFFF");
+    		$("#month_1").css("color","#e84a7e");
+    		$("#month_1").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>1.1-元旦<br>1.5-腊八<br>1.27-除夕<br>1.28-春节";
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		} else if(m=1){
+  			$("#month_2").css("background-color","#FFFFFF");
+    		$("#month_2").css("color","#e84a7e");
+    		$("#month_2").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>2.2-湿地日<br>2.3-立春<br>2.11-元宵节<br>2.14-情人节<br>2.18-雨水<br>2.27-龙头节";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		}else if(m=2){
+  			$("#month_3").css("background-color","#FFFFFF");
+    		$("#month_3").css("color","#e84a7e");
+    		$("#month_3").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="3.12-植树节<br>123";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		}else if(m=3){
+  			$("#month_4").css("background-color","#FFFFFF");
+    		$("#month_4").css("color","#e84a7e");
+    		$("#month_4").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>4.1-愚人节<br>4.4-清明<br>4.20-谷雨<br>4.22-地球日";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		}else if(m=4){
+  			$("#month_5").css("background-color","#FFFFFF");
+    		$("#month_5").css("color","#e84a7e");
+    		$("#month_5").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>5.1-劳动节<br>5.4-青年节<br>5.5-立夏<br>5.12-护士节<br>5.14-母亲节<br>5.18-博物馆日<br>5.21-小满<br>5.30-端午";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		}else if(m=5){
+  			$("#month_6").css("background-color","#FFFFFF");
+    		$("#month_6").css("color","#e84a7e");
+    		$("#month_6").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>6.1-儿童节<br>6.5-环境日<br>6.18-父亲节<br>6.21-夏至<br>6.23-奥林匹克日";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		}else if(m=6){
+  			$("#month_7").css("background-color","#FFFFFF");
+    		$("#month_7").css("color","#e84a7e");
+    		$("#month_7").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>7.1-建党节<br>7.7-小暑<br>7.22-大暑";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		}else if(m=7){
+  			$("#month_8").css("background-color","#FFFFFF");
+    		$("#month_8").css("color","#e84a7e");
+    		$("#month_8").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>8.1-建军节<br>8.7-立秋<br>8.23-处暑<br>8.28-七夕";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		}else if(m=8){
+  			$("#month_9").css("background-color","#FFFFFF");
+    		$("#month_9").css("color","#e84a7e");
+    		$("#month_9").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>9.3-抗战胜利日<br>9.5-中元节<br>9.7-白露<br>9.10-教师节<br>9.23-秋分";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		}else if(m=9){
+  			$("#month_10").css("background-color","#FFFFFF");
+    		$("#month_10").css("color","#e84a7e");
+    		$("#month_10").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>10.1-国庆节<br>10.4-中秋<br>10.8-寒露<br>10.23-霜降<br>10.28-重阳";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		}else if(m=10){
+  			$("#month_11").css("background-color","#FFFFFF");
+    		$("#month_11").css("color","#e84a7e");
+    		$("#month_11").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>11.7-立冬<br>11.11-光棍节<br>11.18-寒食节<br>11.22-小雪";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+    		$("#month_12").css("background-color","#424242");
+    		$("#month_12").css("color","#ffffff");
+    		$("#month_12").css("border","1px solid #ffffff");
+  		}else if(m=11){
+  			$("#month_12").css("background-color","#FFFFFF");
+    		$("#month_12").css("color","#e84a7e");
+    		$("#month_12").css("border","1px solid #424242");
+    		document.getElementById("tips").innerHTML="<br>12.1-艾滋病日<br>12.2-下元节<br>12.7-大雪<br>12.22-冬至<br>12.25-圣诞节";
+    		$("#month_1").css("background-color","#424242");
+    		$("#month_1").css("color","#ffffff");
+    		$("#month_1").css("border","1px solid #ffffff");
+    		$("#month_2").css("background-color","#424242");
+    		$("#month_2").css("color","#ffffff");
+    		$("#month_2").css("border","1px solid #ffffff");
+    		$("#month_3").css("background-color","#424242");
+    		$("#month_3").css("color","#ffffff");
+    		$("#month_3").css("border","1px solid #ffffff");
+    		$("#month_4").css("background-color","#424242");
+    		$("#month_4").css("color","#ffffff");
+    		$("#month_4").css("border","1px solid #ffffff");
+    		$("#month_5").css("background-color","#424242");
+    		$("#month_5").css("color","#ffffff");
+    		$("#month_5").css("border","1px solid #ffffff");
+    		$("#month_6").css("background-color","#424242");
+    		$("#month_6").css("color","#ffffff");
+    		$("#month_6").css("border","1px solid #ffffff");
+    		$("#month_7").css("background-color","#424242");
+    		$("#month_7").css("color","#ffffff");
+    		$("#month_7").css("border","1px solid #ffffff");
+    		$("#month_9").css("background-color","#424242");
+    		$("#month_9").css("color","#ffffff");
+    		$("#month_9").css("border","1px solid #ffffff");
+    		$("#month_10").css("background-color","#424242");
+    		$("#month_10").css("color","#ffffff");
+    		$("#month_10").css("border","1px solid #ffffff");
+    		$("#month_11").css("background-color","#424242");
+    		$("#month_11").css("color","#ffffff");
+    		$("#month_11").css("border","1px solid #ffffff");
+    		$("#month_8").css("background-color","#424242");
+    		$("#month_8").css("color","#ffffff");
+    		$("#month_8").css("border","1px solid #ffffff");
+  		}
+	</script>
 	</body>
 </html>
